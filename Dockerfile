@@ -36,7 +36,8 @@ COPY entrypoint.sh /entrypoint.sh
 
 EXPOSE 8000
 WORKDIR /data
-VOLUME [ "/data" ]
+RAILWAY_VOLUME_NAME nerve-disk
+RAILWAY_VOLUME_MOUNT_PATH /data
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 CMD [ "/usr/local/bin/license-server", "run" ]
